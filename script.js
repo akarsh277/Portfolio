@@ -34,14 +34,14 @@ const PROJECTS = [
 ];
 
 const SKILLS = [
-  { name: "React",         icon: "layout",   category: "Frontend" },
-  { name: "JavaScript",   icon: "code-2",   category: "Frontend" },
-  { name: "HTML/CSS",     icon: "layers",   category: "Frontend" },
-  { name: "FastAPI",      icon: "server",   category: "Backend"  },
-  { name: "Python OOP",   icon: "terminal", category: "Backend"  },
-  { name: "PostgreSQL",   icon: "database", category: "Backend"  },
-  { name: "Java DSA",     icon: "cpu",      category: "Core"     },
-  { name: "System Design",icon: "network",  category: "Core"     },
+  { name: "React", icon: "layout", category: "Frontend" },
+  { name: "JavaScript", icon: "code-2", category: "Frontend" },
+  { name: "HTML/CSS", icon: "layers", category: "Frontend" },
+  { name: "FastAPI", icon: "server", category: "Backend" },
+  { name: "Python OOP", icon: "terminal", category: "Backend" },
+  { name: "PostgreSQL", icon: "database", category: "Backend" },
+  { name: "Java DSA", icon: "cpu", category: "Core" },
+  { name: "System Design", icon: "network", category: "Core" },
 ];
 
 const EXPERIENCE = [
@@ -62,9 +62,9 @@ const EXPERIENCE = [
 const EDUCATION = [
   {
     degree: "B.Tech – Computer Science Engineering",
-    school:  "Pragati Engineering College",
-    period:  "2024 – 2028",
-    desc:    "Current CGPA: 8.86 / 10. Relevant Coursework: Data Structures, OOP, Database Management Systems.",
+    school: "Pragati Engineering College",
+    period: "2024 – 2028",
+    desc: "Current CGPA: 8.86 / 10. Relevant Coursework: Data Structures, OOP, Database Management Systems.",
   },
 ];
 
@@ -95,30 +95,30 @@ const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
 // ---- CUSTOM CURSOR -------------------------------------------------------
 
 function initCursor() {
-  const dot  = document.getElementById("cursor-dot");
+  const dot = document.getElementById("cursor-dot");
   const ring = document.getElementById("cursor-ring");
   if (!dot || !ring) return;
 
   let rx = 0, ry = 0;
 
   document.addEventListener("mousemove", (e) => {
-    dot.style.left  = e.clientX + "px";
-    dot.style.top   = e.clientY + "px";
+    dot.style.left = e.clientX + "px";
+    dot.style.top = e.clientY + "px";
 
     // Smooth ring lag
     rx += (e.clientX - rx) * 0.12;
     ry += (e.clientY - ry) * 0.12;
     ring.style.left = rx + "px";
-    ring.style.top  = ry + "px";
+    ring.style.top = ry + "px";
   });
 
   // Optional: smoother ring animation via rAF
   function animateRing() {
     const style = getComputedStyle(ring);
-    const curX  = parseFloat(style.left)  || 0;
-    const curY  = parseFloat(style.top)   || 0;
+    const curX = parseFloat(style.left) || 0;
+    const curY = parseFloat(style.top) || 0;
     ring.style.left = curX + "px";
-    ring.style.top  = curY + "px";
+    ring.style.top = curY + "px";
     requestAnimationFrame(animateRing);
   }
 
@@ -181,11 +181,11 @@ function initScrollSpy() {
 function initParticles() {
   const canvas = document.getElementById("hero-canvas");
   if (!canvas) return;
-  const ctx   = canvas.getContext("2d");
+  const ctx = canvas.getContext("2d");
   let W, H, particles = [];
 
   function resize() {
-    W = canvas.width  = canvas.offsetWidth;
+    W = canvas.width = canvas.offsetWidth;
     H = canvas.height = canvas.offsetHeight;
   }
   resize();
@@ -301,12 +301,12 @@ function initCounters() {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         observer.unobserve(entry.target);
-        const el     = entry.target;
+        const el = entry.target;
         const target = parseInt(el.dataset.target, 10);
         const suffix = el.dataset.suffix || "";
-        let current  = 0;
-        const step   = Math.ceil(target / 40);
-        const timer  = setInterval(() => {
+        let current = 0;
+        const step = Math.ceil(target / 40);
+        const timer = setInterval(() => {
           current = Math.min(current + step, target);
           el.textContent = current + suffix;
           if (current >= target) clearInterval(timer);
@@ -323,9 +323,9 @@ function initCounters() {
 function init3DTilt(card) {
   card.addEventListener("mousemove", (e) => {
     const rect = card.getBoundingClientRect();
-    const x  = e.clientX - rect.left;
-    const y  = e.clientY - rect.top;
-    const cx = rect.width  / 2;
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const cx = rect.width / 2;
     const cy = rect.height / 2;
     const rotX = clamp(((y - cy) / cy) * 8, -8, 8);
     const rotY = clamp(((x - cx) / cx) * -8, -8, 8);
@@ -469,11 +469,11 @@ function injectEducation() {
 // ---- CERTIFICATE MODAL ---------------------------------------------------
 
 function initModal() {
-  const modal       = document.getElementById("cert-modal");
-  const modalImg    = document.getElementById("modal-img");
-  const closeModal  = document.getElementById("close-modal");
-  const prevBtn     = document.getElementById("prev-cert");
-  const nextBtn     = document.getElementById("next-cert");
+  const modal = document.getElementById("cert-modal");
+  const modalImg = document.getElementById("modal-img");
+  const closeModal = document.getElementById("close-modal");
+  const prevBtn = document.getElementById("prev-cert");
+  const nextBtn = document.getElementById("next-cert");
   const downloadBtn = document.getElementById("download-cert");
   if (!modal) return;
 
@@ -506,9 +506,9 @@ function initModal() {
 
   document.addEventListener("keydown", (e) => {
     if (modal.classList.contains("opacity-0")) return;
-    if (e.key === "Escape")      closeModalFn();
-    if (e.key === "ArrowRight")  nextBtn.click();
-    if (e.key === "ArrowLeft")   prevBtn.click();
+    if (e.key === "Escape") closeModalFn();
+    if (e.key === "ArrowRight") nextBtn.click();
+    if (e.key === "ArrowLeft") prevBtn.click();
   });
 }
 
@@ -532,18 +532,18 @@ function initHeroIntro() {
 // ---- CONTACT FORM --------------------------------------------------------
 
 function initContactForm() {
-  const form      = document.getElementById("contact-form");
+  const form = document.getElementById("contact-form");
   const submitBtn = document.getElementById("submit-btn");
   if (!form || !submitBtn) return;
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    submitBtn.disabled   = true;
-    submitBtn.innerText  = "Sending…";
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Sending…";
 
     const formData = {
-      name:    this.querySelector('input[type="text"]').value.trim(),
-      email:   this.querySelector('input[type="email"]').value.trim(),
+      name: this.querySelector('input[type="text"]').value.trim(),
+      email: this.querySelector('input[type="email"]').value.trim(),
       message: this.querySelector("textarea").value.trim(),
     };
 
