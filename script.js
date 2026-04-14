@@ -15,6 +15,15 @@ const PROJECTS = [
     image: "images/chatbot1.jpeg",
   },
   {
+    title: "DisasterLink",
+    description:
+      "A real-time, centralized disaster response platform that coordinates emergency reporting, volunteer management, and live authority alerts to stream-line crisis operations.",
+    tech: ["HTML", "CSS", "JavaScript", "Python", "FastAPI"],
+    github: "https://akarsh277.github.io/DisasterLink/",
+    live: "https://akarsh277.github.io/DisasterLink/",
+    image: "images/DisasterLink.png",
+  },
+  {
     title: "Portfolio Website",
     description:
       "Personal portfolio built with HTML, CSS & Vanilla JavaScript. Features responsive design, dynamic content rendering, smooth animations, and modern glassmorphism UI.",
@@ -22,14 +31,6 @@ const PROJECTS = [
     github: "https://akarsh277.github.io/Portfolio/",
     live: "https://akarsh277.github.io/Portfolio/",
     image: "images/portifolio.jpg",
-  },
-  {
-    title: "Algoverse",
-    description:
-      "Interactive platform for visualizing Data Structures and Algorithms. Helps students understand complex Java DSA concepts through animation and step-by-step execution.",
-    tech: ["Java", "Spring Boot", "React", "Framer Motion"],
-    github: "#",
-    image: "https://picsum.photos/seed/algo/800/600",
   },
 ];
 
