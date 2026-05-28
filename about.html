@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Akhilesh - Education and Technical Expertise.">
+    <title>Akarsh Vijjapu</title>
+    <link rel="icon" href="assets/fevicon logo.jpg" type="image/jpeg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="mesh-gradient loading">
+
+    <!-- =================== ABOUT ANIMATION (SPLASH SCREEN) =================== -->
+    <div id="about-splash" class="fixed inset-0 z-[9999] bg-black flex flex-col items-center justify-center select-none pointer-events-auto overflow-hidden" style="background-color: #000000; transition: transform 0.8s cubic-bezier(0.85, 0, 0.15, 1), opacity 0.8s ease;">
+        <div id="loading-container" class="relative inline-block text-white font-mono text-2xl md:text-4xl tracking-[0.3em]">
+            <div id="loading-text" class="whitespace-nowrap pl-3 pr-2 py-1" style="clip-path: inset(0 100% 0 0);">
+                LOADING...
+            </div>
+            <div id="loading-cursor" class="absolute top-1 bottom-1 left-0 w-[3px] bg-white"></div>
+        </div>
+    </div>    <!-- =================== CURSOR =================== -->
+    <div id="cursor-ring"></div>
+
+    <!-- =================== FLOATING HEADER =================== -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#f4f5f6]/85 backdrop-blur-md border-b border-black/5 px-6 py-4"
+        id="main-header">
+        <div class="container mx-auto flex items-center justify-between max-w-6xl">
+            <a href="index.html"
+                class="text-2xl font-black tracking-tighter text-black uppercase transition btn-hover-line"
+                id="logo">Akarsh</a>
+            <div class="flex items-center gap-8">
+                <span class="hidden md:inline text-sm font-medium text-zinc-500 italic">Consistency +
+                    Discipline
+                    = Unstoppable Growth</span>
+                <a href="index.html"
+                    class="text-sm font-bold uppercase tracking-wider text-black transition btn-hover-line">Home</a>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- =================== ABOUT ME SECTION =================== -->
+    <main class="pt-32 pb-24 min-h-screen">
+        <div class="container mx-auto px-6 max-w-6xl">
+
+            <!-- Page Title -->
+            <div class="text-center mb-16">
+                <h1 class="text-7xl md:text-9xl font-black tracking-tight text-black uppercase mb-4">
+                    About Me
+                </h1>
+                <div class="w-16 h-1 bg-black mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Education Grid -->
+            <div class="grid md:grid-cols-2 gap-8 mb-24">
+
+                <!-- Education Card 1 -->
+                <div
+                    class="glass p-8 rounded-3xl border border-black/5 hover:border-black/10 transition-all duration-300 flex flex-col gap-4">
+                    <div class="flex items-center gap-2">
+                        <!-- Connector line & dot -->
+                        <div class="flex items-center relative pr-4">
+                            <span class="w-1.5 h-1.5 bg-black rounded-full"></span>
+                            <span class="w-6 h-[1px] bg-zinc-300"></span>
+                        </div>
+                        <!-- Pill Badge -->
+                        <span
+                            class="bg-black text-white text-[10px] font-bold tracking-wider px-3.5 py-1.5 rounded-full uppercase">
+                            2024 - Present
+                        </span>
+                    </div>
+
+                    <h2 class="text-3xl font-black tracking-tight text-zinc-950 uppercase mt-2">
+                        BTech in Computer Science &amp; Engineering
+                    </h2>
+                    <p class="text-zinc-500 text-sm font-medium">
+                        @ Pragati Engineering College
+                    </p>
+                    <p class="text-zinc-600 text-lg leading-relaxed mt-2">
+                        I'm currently pursuing my B.Tech in Computer Science and Engineering at Pragati Engineering
+                        College.
+                        Actively focusing on algorithmic problem solving, modern database scaling, API architectures,
+                        and
+                        object-oriented backend designs.
+                    </p>
+                </div>
+
+                <!-- Education Card 2 -->
+                <div
+                    class="glass p-8 rounded-3xl border border-black/5 hover:border-black/10 transition-all duration-300 flex flex-col gap-4">
+                    <div class="flex items-center gap-2">
+                        <!-- Connector line & dot -->
+                        <div class="flex items-center relative pr-4">
+                            <span class="w-1.5 h-1.5 bg-black rounded-full"></span>
+                            <span class="w-6 h-[1px] bg-zinc-300"></span>
+                        </div>
+                        <!-- Pill Badge -->
+                        <span
+                            class="bg-black text-white text-[10px] font-bold tracking-wider px-3.5 py-1.5 rounded-full uppercase">
+                            2022 - 2024
+                        </span>
+                    </div>
+
+                    <h2 class="text-3xl font-black tracking-tight text-zinc-950 uppercase mt-2">
+                        Intermediate MPC (11th-12th)
+                    </h2>
+                    <p class="text-zinc-500 text-sm font-medium">
+                        @ Narayana Junior College
+                    </p>
+                    <p class="text-zinc-600 text-lg leading-relaxed mt-2">
+                        Completed my Intermediate education at Narayana Junior College with a specialization in
+                        Mathematics, Physics, and Chemistry (MPC), building a robust mathematical foundation critical
+                        for computer science theories.
+                    </p>
+                </div>
+
+                <!-- Education Card 3 (IoT & AI Patented Project) -->
+                <div
+                    class="glass p-8 rounded-3xl border border-black/5 hover:border-black/10 transition-all duration-300 flex flex-col gap-4">
+                    <div class="flex items-center gap-2">
+                        <!-- Connector line & dot -->
+                        <div class="flex items-center relative pr-4">
+                            <span class="w-1.5 h-1.5 bg-black rounded-full"></span>
+                            <span class="w-6 h-[1px] bg-zinc-300"></span>
+                        </div>
+                        <!-- Pill Badge -->
+                        <span
+                            class="bg-black text-white text-[10px] font-bold tracking-wider px-3.5 py-1.5 rounded-full uppercase">
+                            2021-2022
+                        </span>
+                    </div>
+
+                    <h2 class="text-3xl font-black tracking-tight text-zinc-950 uppercase mt-2">
+                        SSC(10th)
+                    </h2>
+                    <p class="text-zinc-500 text-sm font-medium">
+                        @ Sama School
+                    </p>
+                    <p class="text-zinc-600 text-lg leading-relaxed mt-2">
+                        I completed my 10th grade (SSC) at SAMA School. The school provided a strong academic
+                        foundation that helped me develop discipline, problem-solving skills, and a continuous
+                        learning mindset.
+                    </p>
+                </div>
+
+                <!-- Education Card 4 (Java DSA Mastery) -->
+                <div
+                    class="glass p-8 rounded-3xl border border-black/5 hover:border-black/10 transition-all duration-300 flex flex-col gap-4">
+                    <div class="flex items-center gap-2">
+                        <!-- Connector line & dot -->
+                        <div class="flex items-center relative pr-4">
+                            <span class="w-1.5 h-1.5 bg-black rounded-full"></span>
+                            <span class="w-6 h-[1px] bg-zinc-300"></span>
+                        </div>
+                        <!-- Pill Badge -->
+                        <span
+                            class="bg-black text-white text-[10px] font-bold tracking-wider px-3.5 py-1.5 rounded-full uppercase">
+                            2011-2021
+                        </span>
+                    </div>
+
+                    <h2 class="text-3xl font-black tracking-tight text-zinc-950 uppercase mt-2">
+                        School Education
+                    </h2>
+                    <p class="text-zinc-500 text-sm font-medium">
+                        @ Sama School
+                    </p>
+                    <p class="text-zinc-600 text-lg leading-relaxed mt-2">
+                        Completed my schooling completely in Sama School, Kakinada.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Tech Stack Section Title -->
+            <div class="mb-10 text-left">
+                <h2 class="text-5xl md:text-6xl font-black tracking-tight text-black uppercase">
+                    Tech Stack
+                </h2>
+                <div class="w-12 h-1 bg-black mt-3 rounded-full"></div>
+            </div>
+
+            <!-- Tech Stack Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+                <!-- Python -->
+                <div
+                    class="glass p-8 rounded-3xl flex flex-col items-center justify-center gap-4 text-center border border-black/5 hover:border-black/10 transition-all hover:-translate-y-1.5 duration-300 tech-card select-none">
+                    <div class="w-14 h-14 flex items-center justify-center">
+                        <img src="assets/skills/python.png" alt="Python Logo"
+                            class="max-w-full max-h-full object-contain">
+                    </div>
+                    <span class="text-xs md:text-sm font-bold uppercase tracking-wider text-black">Python</span>
+                </div>
+
+                <!-- C -->
+                <div
+                    class="glass p-8 rounded-3xl flex flex-col items-center justify-center gap-4 text-center border border-black/5 hover:border-black/10 transition-all hover:-translate-y-1.5 duration-300 tech-card select-none">
+                    <div class="w-14 h-14 flex items-center justify-center">
+                        <img src="assets/skills/c.jpg" alt="C Logo" class="max-w-full max-h-full object-contain">
+                    </div>
+                    <span class="text-xs md:text-sm font-bold uppercase tracking-wider text-black">C</span>
+                </div>
+
+                <!-- Django -->
+                <div
+                    class="glass p-8 rounded-3xl flex flex-col items-center justify-center gap-4 text-center border border-black/5 hover:border-black/10 transition-all hover:-translate-y-1.5 duration-300 tech-card select-none">
+                    <div class="w-14 h-14 flex items-center justify-center">
+                        <img src="assets/skills/django.jpg" alt="Django Logo"
+                            class="max-w-full max-h-full object-contain">
+                    </div>
+                    <span class="text-xs md:text-sm font-bold uppercase tracking-wider text-black">Django</span>
+                </div>
+
+                <!-- FastAPI -->
+                <div
+                    class="glass p-8 rounded-3xl flex flex-col items-center justify-center gap-4 text-center border border-black/5 hover:border-black/10 transition-all hover:-translate-y-1.5 duration-300 tech-card select-none">
+                    <div class="w-14 h-14 flex items-center justify-center">
+                        <img src="assets/skills/fastapi.png" alt="FastAPI Logo"
+                            class="max-w-full max-h-full object-contain">
+                    </div>
+                    <span class="text-xs md:text-sm font-bold uppercase tracking-wider text-black">FastAPI</span>
+                </div>
+
+                <!-- Java -->
+                <div
+                    class="glass p-8 rounded-3xl flex flex-col items-center justify-center gap-4 text-center border border-black/5 hover:border-black/10 transition-all hover:-translate-y-1.5 duration-300 tech-card select-none">
+                    <div class="w-14 h-14 flex items-center justify-center">
+                        <img src="assets/skills/java.png" alt="Java Logo" class="max-w-full max-h-full object-contain">
+                    </div>
+                    <span class="text-xs md:text-sm font-bold uppercase tracking-wider text-black">Java</span>
+                </div>
+
+                <!-- MongoDB -->
+                <div
+                    class="glass p-8 rounded-3xl flex flex-col items-center justify-center gap-4 text-center border border-black/5 hover:border-black/10 transition-all hover:-translate-y-1.5 duration-300 tech-card select-none">
+                    <div class="w-14 h-14 flex items-center justify-center">
+                        <img src="assets/skills/mongodb.jpg" alt="MongoDB Logo"
+                            class="max-w-full max-h-full object-contain">
+                    </div>
+                    <span class="text-xs md:text-sm font-bold uppercase tracking-wider text-black">MongoDB</span>
+                </div>
+
+                <!-- ML -->
+                <div
+                    class="glass p-8 rounded-3xl flex flex-col items-center justify-center gap-4 text-center border border-black/5 hover:border-black/10 transition-all hover:-translate-y-1.5 duration-300 tech-card select-none">
+                    <div class="w-14 h-14 flex items-center justify-center">
+                        <img src="assets/skills/ML.jpg" alt="ML Logo" class="max-w-full max-h-full object-contain">
+                    </div>
+                    <span class="text-xs md:text-sm font-bold uppercase tracking-wider text-black">ML</span>
+                </div>
+
+                <!-- System Design -->
+                <div
+                    class="glass p-8 rounded-3xl flex flex-col items-center justify-center gap-4 text-center border border-black/5 hover:border-black/10 transition-all hover:-translate-y-1.5 duration-300 tech-card select-none">
+                    <div class="w-14 h-14 flex items-center justify-center">
+                        <img src="assets/skills/systemdesign.jpg" alt="System Design Logo"
+                            class="max-w-full max-h-full object-contain">
+                    </div>
+                    <span class="text-xs md:text-sm font-bold uppercase tracking-wider text-black">System Design</span>
+                </div>
+
+            </div>
+
+            <!-- =================== HIRE ME BANNER =================== -->
+            <div class="mt-32 text-center py-20 border-t border-black/5">
+                <p class="text-zinc-500 text-lg md:text-xl font-medium tracking-wide mb-4">Wanna work together?</p>
+                <a href="mailto:vakarsh2020@gmail.com"
+                    class="inline-block text-7xl md:text-[10vw] font-black tracking-tighter text-black uppercase hover:scale-[1.04] transition-transform duration-500 select-none">
+                    HIRE ME!
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- =================== BACK TO TOP (WITH CIRCULAR PROGRESS) =================== -->
+    <button id="back-to-top" aria-label="Back to top" class="group relative flex items-center justify-center">
+        <svg class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 48 48">
+            <circle stroke="rgba(255, 255, 255, 0.15)" stroke-width="2" fill="transparent" r="16" cx="24" cy="24" />
+            <circle id="progress-circle" stroke="#ffffff" stroke-width="2" fill="transparent" r="16" cx="24" cy="24"
+                stroke-dasharray="100.53" stroke-dashoffset="100.53" stroke-linecap="round" />
+        </svg>
+        <i data-lucide="arrow-up"
+            class="w-5 h-5 relative z-10 transition-transform group-hover:-translate-y-1 duration-300"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
