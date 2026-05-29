@@ -51,12 +51,14 @@ const EXPERIENCE = [
     company: "48-Hour National Level Hackathon - PSCMR College, Vijayawada.",
     period: "Dec 2025",
     desc: "Collaborated in a team to design and develop a functional prototype within 48 hours. Focused on backend logic and core feature implementation under strict time constraints.",
+    certImage: "assets/certificates/Mindsprint Hackathon.jpg"
   },
   {
     role: "Hackathon – Srujana",
     company: "48-Hour State Level Hackathon - SVPEC College, Vizag.",
     period: "April 2026",
     desc: "Successfully worked in a team to design and develop a functional prototype within 48 hours, contributing to feature development, problem solving, and overall project execution under strict time constraints.",
+    certImage: "assets/certificates/Srujana Hackathon.jpg"
   },
   {
     role: "Self-Driven Full Stack Projects",
@@ -82,7 +84,8 @@ const CERTIFICATIONS = [
     description:
       "Elite certification with a consolidated score of 82%. Completed a 12-week proctored programme covering OOP, collections, exception handling, and core Java fundamentals.",
     year: "2025",
-    logo: `<img src="assets/certificates/nptel.jpg" class="w-10 h-10 object-contain rounded-full" alt="NPTEL Logo">`
+    logo: `<img src="assets/certificates/nptel.jpg" class="w-10 h-10 object-contain rounded-full" alt="NPTEL Logo">`,
+    certImage: "assets/certificates/nptel java.jpeg"
   },
   {
     title: "WEB DEVELOPMENT WORKSHOP & HACKATHON",
@@ -90,7 +93,8 @@ const CERTIFICATIONS = [
     description:
       "Participated in a 2-day workshop and 24-hour hackathon on Web Application Development using Design Thinking and Innovation, collaborating on real-world problem solving and rapid project development.",
     year: "2025",
-    logo: `<img src="assets/certificates/brainovision.jpg" class="w-full h-full object-cover rounded-full" alt="Brainovision Logo">`
+    logo: `<img src="assets/certificates/brainovision.jpg" class="w-full h-full object-cover rounded-full" alt="Brainovision Logo">`,
+    certImage: "assets/certificates/Brain o vision workshop.jpg"
   },
   {
     title: "ESSENTIALS IN PYTHON",
@@ -98,7 +102,8 @@ const CERTIFICATIONS = [
     description:
       "Successfully completed a fundamentals course on Python programming, covering core syntax, control structures, and basic scripting applications.",
     year: "2025",
-    logo: `<img src="assets/certificates/scaler.png" class="w-full h-full object-contain rounded-full" alt="Scaler Logo">`
+    logo: `<img src="assets/certificates/scaler.png" class="w-full h-full object-contain rounded-full" alt="Scaler Logo">`,
+    certImage: "assets/certificates/Python scalar.jpg"
   },
   {
     title: "AI TOOLS WORKSHOP",
@@ -106,7 +111,8 @@ const CERTIFICATIONS = [
     description:
       "Completed an AI Tools and ChatGPT workshop focused on practical AI-assisted workflows, productivity enhancement, data analysis, and debugging techniques.",
     year: "2026",
-    logo: `<img src="assets/certificates/be10x.png" class="w-full h-full object-fill rounded-full" alt="Brainovision Logo">`
+    logo: `<img src="assets/certificates/be10x.png" class="w-full h-full object-fill rounded-full" alt="Brainovision Logo">`,
+    certImage: "assets/certificates/Be10x.jpg"
   },
 ];
 
@@ -489,25 +495,37 @@ function injectCertifications() {
   if (!grid) return;
   CERTIFICATIONS.forEach((cert, i) => {
     const div = document.createElement("div");
-    div.className = "glass rounded-3xl p-8 flex flex-col justify-between group border border-black/5 hover:border-black/10 transition-all certification-card reveal";
+    div.className = "glass rounded-3xl p-8 flex flex-col justify-between group border border-black/5 hover:border-black/10 transition-all certification-card reveal relative overflow-hidden cursor-pointer";
     div.style.transitionDelay = `${i * 100}ms`;
+    
+    if (cert.certImage) {
+      div.onclick = () => showModal(cert.certImage);
+    }
+    
     div.innerHTML = `
-      <div>
-        <div class="w-12 h-12 rounded-full overflow-hidden border border-zinc-100 bg-white flex items-center justify-center mb-6 shadow-sm">
-          ${cert.logo}
+      <div class="relative z-10 transition-all duration-300 group-hover:blur-sm group-hover:opacity-40 flex flex-col justify-between h-full">
+        <div>
+          <div class="w-12 h-12 rounded-full overflow-hidden border border-zinc-100 bg-white flex items-center justify-center mb-6 shadow-sm">
+            ${cert.logo}
+          </div>
+          <p class="text-zinc-600 text-base leading-relaxed mb-6">${cert.description}</p>
         </div>
-        <p class="text-zinc-600 text-base leading-relaxed mb-6">${cert.description}</p>
+        <div>
+          <h3 class="text-2xl font-black tracking-tight text-black uppercase mb-1">${cert.title}</h3>
+          <p class="text-zinc-500 text-xs font-semibold">${cert.provider}</p>
+        </div>
       </div>
-      <div>
-        <h3 class="text-2xl font-black tracking-tight text-black uppercase mb-1">${cert.title}</h3>
-        <p class="text-zinc-500 text-xs font-semibold">${cert.provider}</p>
+      
+      <!-- Hover Overlay -->
+      <div class="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <span class="bg-black text-white px-6 py-3 rounded-full font-bold uppercase tracking-wider text-xs flex items-center gap-2 shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+          View Certificate <i data-lucide="external-link" class="w-4 h-4"></i>
+        </span>
       </div>
     `;
     grid.appendChild(div);
   });
 }
-
-// ---- INJECT EXPERIENCE ---------------------------------------------------
 
 // ---- INJECT EXPERIENCE ---------------------------------------------------
 
@@ -529,6 +547,12 @@ function injectExperience() {
       <h4 class="text-3xl font-black tracking-tight text-white uppercase mt-2">${exp.role}</h4>
       <p class="text-zinc-500 text-sm font-medium">@ ${exp.company}</p>
       <p class="text-zinc-400 text-base leading-relaxed mt-2">${exp.desc}</p>
+      ${exp.certImage ? `
+      <div class="mt-4">
+        <button onclick="showModal('${exp.certImage}')" class="github-btn cursor-pointer">
+          VIEW →
+        </button>
+      </div>` : ""}
     `;
     list.appendChild(div);
   });
@@ -561,7 +585,37 @@ function injectEducation() {
 
 // ---- CERTIFICATE MODAL ---------------------------------------------------
 
-function initModal() { }
+function initModal() {
+  const modal = document.getElementById("cert-modal");
+  const closeBtn = document.getElementById("close-modal");
+  
+  if (!modal || !closeBtn) return;
+  
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("opacity-100", "pointer-events-auto");
+    modal.classList.add("opacity-0", "pointer-events-none");
+    setTimeout(() => {
+      document.getElementById("modal-img").src = "";
+    }, 300);
+  });
+  
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal || e.target.closest('.relative') === null) {
+      closeBtn.click();
+    }
+  });
+}
+
+window.showModal = function(imageSrc) {
+  const modal = document.getElementById("cert-modal");
+  const modalImg = document.getElementById("modal-img");
+  
+  if (!modal || !modalImg) return;
+  
+  modalImg.src = imageSrc;
+  modal.classList.remove("opacity-0", "pointer-events-none");
+  modal.classList.add("opacity-100", "pointer-events-auto");
+};
 
 // ---- SCROLL REVEAL -------------------------------------------------------
 
@@ -580,26 +634,26 @@ async function initSplash() {
   if (aboutSplash) {
     const textEl = document.getElementById("loading-text");
     const cursorEl = document.getElementById("loading-cursor");
-    
+
     if (textEl && cursorEl) {
       await new Promise(r => setTimeout(r, 400));
-      
+
       // Reveal text: cursor stays left, text unmasks from left to right
       textEl.style.transition = "clip-path 1.2s cubic-bezier(0.76, 0, 0.24, 1)";
       textEl.style.clipPath = "inset(0 0 0 0)";
-      
+
       await new Promise(r => setTimeout(r, 1600));
-      
+
       // Swallow text: cursor moves right, text masks from left to right
       textEl.style.transition = "clip-path 1s cubic-bezier(0.76, 0, 0.24, 1)";
       cursorEl.style.transition = "left 1s cubic-bezier(0.76, 0, 0.24, 1)";
-      
+
       textEl.style.clipPath = "inset(0 0 0 100%)";
       cursorEl.style.left = "100%";
-      
+
       await new Promise(r => setTimeout(r, 1000));
     }
-    
+
     aboutSplash.style.opacity = "0";
     aboutSplash.style.transform = "translateY(-100%)";
     document.body.classList.remove("loading");
