@@ -9,28 +9,28 @@ const PROJECTS = [
     title: "MediQueue",
     description:
       "An end-to-end healthcare queue management platform that streamlines patient registrations, doctor consultations, and pharmacy workflows through real-time, role-based dashboards.",
-    tech: ["HTML", "CSS", "JavaScript", "Python", "FastAPI", "SQLite"],
+    tech: ["HTML", "CSS", "JavaScript", "Python", "FastAPI", "PostgreSQL", "SQLAlchemy"],
     github: "https://github.com/akarsh277/MediQueue",
-    live: "https://akarsh277.github.io/MediQueue/frontend/login.html",
+    live: "medi-queue-project.vercel.app",
     image: "assets/projects/mediqueue.jpg",
   },
   {
     title: "DisasterLink",
     description:
       "A real-time, centralized disaster response platform that coordinates emergency reporting, volunteer management, and live authority alerts to stream-line crisis operations.",
-    tech: ["HTML", "CSS", "JavaScript", "Python", "FastAPI"],
-    github: "https://github.com/Disaster-Link/DisasterLink",
-    live: "https://disaster-link.github.io/DisasterLink/",
+    tech: ["HTML", "CSS", "JavaScript", "Python", "FastAPI", "websockets", "SQLAlchemy", "PostgreSQL"],
+    github: "https://github.com/akarsh277/DisasterLink",
+    live: "disaster-link-omega.vercel.app",
     image: "assets/projects/DisasterLink.png",
   },
   {
     title: "CureBot",
     description:
       "AI-powered healthcare chatbot that analyzes user symptoms in real time and delivers preliminary medical guidance through a FastAPI-driven web interface.",
-    tech: ["HTML", "CSS", "JavaScript", "Python", "FastAPI"],
+    tech: ["HTML", "CSS", "JavaScript", "Python", "FastAPI", "websockets", "AI Integration"],
     github: "https://github.com/akarsh277/CureBot",
-    live: "https://akarsh277.github.io/CureBot/",
-    image: "assets/projects/chatbot1.jpeg",
+    live: "cure-bot-phi.vercel.app",
+    image: "assets/projects/curebot.png",
   },
 ];
 
@@ -50,7 +50,7 @@ const EXPERIENCE = [
     role: "Hackathon – Mind Sprint 2K25",
     company: "48-Hour National Level Hackathon - PSCMR College, Vijayawada.",
     period: "Dec 2025",
-    desc: "Collaborated in a team to design and develop a functional prototype within 48 hours. Focused on backend logic and core feature implementation under strict time constraints.",
+    desc: "Designed and developed a functional web application within 36 hours, collaborating with a team to deliver a working prototype under strict time constraints.",
     certImage: "assets/certificates/Mindsprint Hackathon.jpg"
   },
   {
@@ -113,6 +113,15 @@ const CERTIFICATIONS = [
     year: "2026",
     logo: `<img src="assets/certificates/be10x.png" class="w-full h-full object-fill rounded-full" alt="Brainovision Logo">`,
     certImage: "assets/certificates/Be10x.jpg"
+  },
+  {
+    title: "SQL and Relational Databases",
+    provider: "IBM Skills Network | CognitiveClass.ai",
+    description:
+      "Completed IBM's SQL and Relational Databases 101 course, covering SQL fundamentals, relational database design, joins, filtering, aggregation, normalization, and database querying.",
+    year: "2026",
+    logo: `<img src="assets/certificates/ibm.jpg" class="w-full h-full object-contain rounded-full bg-white" alt="IBM Logo">`,
+    certImage: "assets/certificates/IBM sql.jpeg"
   },
 ];
 
@@ -472,11 +481,16 @@ function injectProjects() {
         <img src="${project.image}" alt="${project.title}">
       </div>
       <div class="project-card-body">
-        <div class="mb-1">${techTags}</div>
-        <h3 class="text-2xl md:text-3xl font-black tracking-tight text-white uppercase">
+        <h3 class="text-2xl md:text-3xl font-black tracking-tight text-white uppercase mt-2">
           ${project.title}
         </h3>
-        <div class="flex items-center gap-4 mt-4">
+        <p class="text-zinc-400 mt-3 text-sm leading-relaxed line-clamp-3">
+          ${project.description}
+        </p>
+        <div class="mt-4 text-sm text-zinc-300 flex flex-wrap items-center gap-1">
+          <span class="font-bold text-white uppercase text-[10px] tracking-wider mr-1">Tech:</span> ${techTags}
+        </div>
+        <div class="flex items-center gap-4 mt-5">
           <a href="${project.github}" target="_blank" class="github-btn">
             GitHub →
           </a>
@@ -497,11 +511,11 @@ function injectCertifications() {
     const div = document.createElement("div");
     div.className = "glass rounded-3xl p-8 flex flex-col justify-between group border border-black/5 hover:border-black/10 transition-all certification-card reveal relative overflow-hidden cursor-pointer";
     div.style.transitionDelay = `${i * 100}ms`;
-    
+
     if (cert.certImage) {
       div.onclick = () => showModal(cert.certImage);
     }
-    
+
     div.innerHTML = `
       <div class="relative z-10 transition-all duration-300 group-hover:blur-sm group-hover:opacity-40 flex flex-col justify-between h-full">
         <div>
@@ -588,9 +602,9 @@ function injectEducation() {
 function initModal() {
   const modal = document.getElementById("cert-modal");
   const closeBtn = document.getElementById("close-modal");
-  
+
   if (!modal || !closeBtn) return;
-  
+
   closeBtn.addEventListener("click", () => {
     modal.classList.remove("opacity-100", "pointer-events-auto");
     modal.classList.add("opacity-0", "pointer-events-none");
@@ -598,7 +612,7 @@ function initModal() {
       document.getElementById("modal-img").src = "";
     }, 300);
   });
-  
+
   modal.addEventListener("click", (e) => {
     if (e.target === modal || e.target.closest('.relative') === null) {
       closeBtn.click();
@@ -606,12 +620,12 @@ function initModal() {
   });
 }
 
-window.showModal = function(imageSrc) {
+window.showModal = function (imageSrc) {
   const modal = document.getElementById("cert-modal");
   const modalImg = document.getElementById("modal-img");
-  
+
   if (!modal || !modalImg) return;
-  
+
   modalImg.src = imageSrc;
   modal.classList.remove("opacity-0", "pointer-events-none");
   modal.classList.add("opacity-100", "pointer-events-auto");
