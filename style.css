@@ -76,6 +76,12 @@ html {
     border-width: 2.5px;
 }
 
+@media (max-width: 1024px), (pointer: coarse) {
+    #cursor-ring {
+        display: none !important;
+    }
+}
+
 /* ---------- Back-to-Top Button ---------- */
 #back-to-top {
     position: fixed;
@@ -382,7 +388,7 @@ nav a:hover {
         min-height: 200px;
     }
     .project-card-body {
-        padding: 24px;
+        padding: 16px 0 0 0;
     }
 }
 

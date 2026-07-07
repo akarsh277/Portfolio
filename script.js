@@ -548,7 +548,7 @@ function injectExperience() {
   if (!list) return;
   EXPERIENCE.forEach((exp, i) => {
     const div = document.createElement("div");
-    div.className = "p-8 rounded-3xl border border-white/10 bg-white/[0.03] flex flex-col gap-4 mb-6 reveal hover:border-white/20 transition-all duration-300";
+    div.className = "p-6 md:p-8 rounded-3xl border border-white/10 bg-white/[0.03] flex flex-col gap-4 mb-6 reveal hover:border-white/20 transition-all duration-300";
     div.style.transitionDelay = `${i * 100}ms`;
     div.innerHTML = `
       <div class="flex items-center gap-2">
@@ -579,7 +579,7 @@ function injectEducation() {
   if (!list) return;
   EDUCATION.forEach((edu, i) => {
     const div = document.createElement("div");
-    div.className = "glass p-8 rounded-3xl border border-black/5 flex flex-col gap-4 mb-6 reveal shadow-sm hover:border-black/10 transition-all duration-300";
+    div.className = "glass p-6 md:p-8 rounded-3xl border border-black/5 flex flex-col gap-4 mb-6 reveal shadow-sm hover:border-black/10 transition-all duration-300";
     div.style.transitionDelay = `${i * 100}ms`;
     div.innerHTML = `
       <div class="flex items-center gap-2">

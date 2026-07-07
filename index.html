@@ -27,7 +27,7 @@
         <div
             class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center w-full px-6">
             <h1 id="welcome-text"
-                class="text-5xl md:text-7xl font-light text-white tracking-[0.4em] uppercase text-center opacity-0 scale-95 pointer-events-none transition-all duration-1000 ease-out select-none">
+                class="text-3xl sm:text-5xl md:text-7xl font-light text-white tracking-[0.2em] sm:tracking-[0.4em] uppercase text-center opacity-0 scale-95 pointer-events-none transition-all duration-1000 ease-out select-none">
                 WELCOME
             </h1>
         </div>
@@ -60,7 +60,7 @@
             <!-- Large bold centered name at the top of Hero -->
             <div id="hero-name" class="text-center mb-12 max-w-5xl mx-auto">
                 <h1
-                    class="text-5xl sm:text-6xl md:text-7xl lg:text-[7rem] font-black uppercase tracking-tight text-zinc-950 leading-none select-none">
+                    class="text-4xl sm:text-6xl md:text-7xl lg:text-[7rem] font-black uppercase tracking-tight text-zinc-950 leading-none select-none">
                     Akarsh Vijjapu
                 </h1>
                 <span class="text-xs font-bold uppercase tracking-[0.25em] text-zinc-400 block mt-3">Computer Science
@@ -70,22 +70,22 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center w-full max-w-6xl mx-auto">
 
                 <!-- Left Column: Metrics -->
-                <div id="hero-left" class="flex flex-col gap-6 text-left">
-                    <div class="flex items-center gap-4">
+                <div id="hero-left" class="flex flex-col gap-6 text-center lg:text-left items-center lg:items-start order-3 lg:order-1">
+                    <div class="flex items-center justify-center lg:justify-start gap-4">
                         <span class="text-6xl md:text-7xl font-black text-black">3+</span>
-                        <div class="flex flex-col">
+                        <div class="flex flex-col text-left">
                             <span class="text-xs font-bold uppercase tracking-wider text-zinc-400">Completed</span>
                             <span class="text-sm font-bold text-zinc-900 uppercase">Real World Projects</span>
                         </div>
                     </div>
-                    <p class="text-zinc-600 text-base leading-relaxed">
+                    <p class="text-zinc-600 text-base leading-relaxed max-w-sm lg:max-w-none">
                         Hands-on Experience building real-world Systems, AI/ML Applications, and Modern Web
                         Solutions.
                     </p>
                 </div>
 
                 <!-- Center Column: Portrait Image -->
-                <div id="hero-center" class="flex justify-center">
+                <div id="hero-center" class="flex justify-center order-1 lg:order-2">
                     <div class="hero-photo-wrapper w-full max-w-[280px] sm:max-w-[320px]">
                         <div
                             class="hero-photo-container relative w-full aspect-[3/4] rounded-[32px] overflow-hidden border border-black/5 shadow-2xl group hover:scale-[1.02] hover:-rotate-[15deg] transition-transform duration-500 origin-center">
@@ -97,8 +97,8 @@
                 </div>
 
                 <!-- Right Column: Intro -->
-                <div id="hero-right" class="flex flex-col gap-6 text-left items-start">
-                    <p class="text-zinc-600 text-base leading-relaxed">
+                <div id="hero-right" class="flex flex-col gap-6 text-center lg:text-left items-center lg:items-start order-2 lg:order-3">
+                    <p class="text-zinc-600 text-base leading-relaxed max-w-sm lg:max-w-none">
                         Hi, I'm Akarsh, a Backend-Focused Computer Science Engineer passionate about designing scalable
                         systems and building impactful digital solutions.
                     </p>
@@ -140,19 +140,19 @@
                     </p>
 
                     <!-- Metrics Row (Flat, Un-boxed) -->
-                    <div class="grid grid-cols-3 gap-8 pt-8 border-t border-zinc-800">
-                        <div class="flex flex-col gap-2">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-8 border-t border-zinc-800 text-center sm:text-left">
+                        <div class="flex flex-col items-center sm:items-start gap-2">
                             <span class="text-5xl md:text-6xl font-black text-white stat-value" data-target="3"
                                 data-suffix="+">3+</span>
                             <span class="text-xs font-bold uppercase tracking-widest text-zinc-500">Projects</span>
                         </div>
-                        <div class="flex flex-col gap-2">
+                        <div class="flex flex-col items-center sm:items-start gap-2">
                             <span class="text-5xl md:text-6xl font-black text-white stat-value" data-target="2"
                                 data-suffix="+">2+</span>
-                            <span class="text-xs font-bold uppercase tracking-widest text-zinc-500">Hackthon
+                            <span class="text-xs font-bold uppercase tracking-widest text-zinc-500">Hackathon
                                 Experience</span>
                         </div>
-                        <div class="flex flex-col gap-2">
+                        <div class="flex flex-col items-center sm:items-start gap-2">
                             <span class="text-5xl md:text-6xl font-black text-white stat-value" data-target="84"
                                 data-suffix="%+">84%+</span>
                             <span class="text-xs font-bold uppercase tracking-widest text-zinc-500">CGPA</span>
@@ -167,7 +167,7 @@
     <section id="services-home" class="py-32 border-b border-black/5">
         <div class="container mx-auto px-6 max-w-6xl">
             <span class="section-tag bg-black/5 border-black/10 text-black">What I Offer</span>
-            <h2 class="text-5xl md:text-6xl font-black tracking-tight mt-4 mb-4 uppercase text-black">
+            <h2 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight mt-4 mb-4 uppercase text-black">
                 My <span class="text-gradient">Services</span>
             </h2>
             <div class="glow-line mb-12 ml-0 max-w-[120px]"></div>
@@ -264,7 +264,7 @@
     <section id="certifications" class="py-32">
         <div class="container mx-auto px-6">
             <p class="section-tag reveal">Verified Skills</p>
-            <h2 class="text-5xl md:text-6xl font-black tracking-tight mb-4 reveal uppercase text-black">
+            <h2 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight mb-4 reveal uppercase text-black">
                 Professional <span class="text-gradient">Certifications</span>
             </h2>
             <div class="glow-line reveal mb-4"></div>
@@ -283,7 +283,7 @@
         style="background-color: #000000;">
         <div class="container mx-auto px-6 max-w-6xl relative z-10">
             <p class="section-tag bg-zinc-900 border-zinc-800 text-zinc-400 reveal">What I've Built</p>
-            <h2 class="text-5xl md:text-6xl font-black tracking-tight mb-4 reveal uppercase text-white">
+            <h2 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight mb-4 reveal uppercase text-white">
                 Featured <span class="text-zinc-400">Projects</span>
             </h2>
             <div class="glow-line reveal mb-16 ml-0 max-w-[120px]"
@@ -304,7 +304,7 @@
                 <div class="grid md:grid-cols-2 gap-16 relative z-10">
                     <div>
                         <p class="section-tag">Get In Touch</p>
-                        <h2 class="text-5xl font-bold mb-6 tracking-tight mt-4 text-black">
+                        <h2 class="text-3xl sm:text-5xl font-bold mb-6 tracking-tight mt-4 text-black">
                             Let's build <br /><span class="text-gradient">something great</span>.
                         </h2>
                         <p class="text-zinc-600 mb-12 max-w-md leading-relaxed">
@@ -320,8 +320,8 @@
                                 </div>
                                 <div>
                                     <p class="text-[10px] text-zinc-500 uppercase tracking-widest">Email Me</p>
-                                    <a href="mailto:vakarsh2020@gmail.com"
-                                        class="font-medium text-zinc-900 hover:text-black transition-colors">vakarsh2020@gmail.com</a>
+                                    <a href="mailto:akarshvijjapu@gmail.com"
+                                        class="font-medium text-zinc-900 hover:text-black transition-colors break-all text-sm sm:text-base">akarshvijjapu@gmail.com</a>
                                 </div>
                             </div>
                             <div class="flex items-center gap-4 group">
@@ -358,7 +358,7 @@
                             <div class="space-y-2">
                                 <label
                                     class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 ml-1">Email</label>
-                                <input required type="email" placeholder="vakarsh2020@gmail.com"
+                                <input required type="email" placeholder="akarshvijjapu@gmail.com"
                                     class="w-full bg-black/[0.02] border border-black/10 text-black rounded-2xl px-6 py-4 focus:outline-none focus:border-black placeholder:text-zinc-400 transition-colors">
                             </div>
                         </div>
@@ -380,8 +380,8 @@
             <div class="mt-32 text-center py-20 border-t border-black/5">
                 <p class="text-zinc-500 text-lg md:text-xl font-medium tracking-wide mb-4">Turn Ideas into Scalable
                     Solutions</p>
-                <a href="mailto:vakarsh2020@gmail.com"
-                    class="inline-block text-7xl md:text-[10vw] font-black tracking-tighter text-black uppercase hover:scale-[1.04] transition-transform duration-500 select-none">
+                <a href="mailto:akarshvijjapu@gmail.com"
+                    class="inline-block text-4xl sm:text-6xl md:text-7xl lg:text-[10vw] font-black tracking-tighter text-black uppercase hover:scale-[1.04] transition-transform duration-500 select-none">
                     LET'S &nbsp; BUILD!
                 </a>
             </div>
