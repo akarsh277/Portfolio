@@ -8,8 +8,20 @@
     <title>Akarsh Vijjapu</title>
     <link rel="icon" href="assets/fevicon logo.jpg" type="image/jpeg">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -52,65 +64,65 @@
     </header>
 
     <!-- =================== HERO =================== -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden py-32 lg:py-40">
         <canvas id="hero-canvas" class="absolute inset-0 pointer-events-none z-0 opacity-40"></canvas>
 
+        <div class="container mx-auto px-6 relative z-10 max-w-7xl">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start w-full">
 
-        <div class="container mx-auto px-6 relative z-10">
-            <!-- Large bold centered name at the top of Hero -->
-            <div id="hero-name" class="text-center mb-12 max-w-5xl mx-auto">
-                <h1
-                    class="text-4xl sm:text-6xl md:text-7xl lg:text-[7rem] font-black uppercase tracking-tight text-zinc-950 leading-none select-none">
-                    Akarsh Vijjapu
-                </h1>
-                <span class="text-xs font-bold uppercase tracking-[0.25em] text-zinc-400 block mt-3">Computer Science
-                    Engineer</span>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center w-full max-w-6xl mx-auto">
-
-                <!-- Left Column: Metrics -->
-                <div id="hero-left" class="flex flex-col gap-6 text-center lg:text-left items-center lg:items-start order-3 lg:order-1">
-                    <div class="flex items-center justify-center lg:justify-start gap-4">
-                        <span class="text-6xl md:text-7xl font-black text-black">3+</span>
-                        <div class="flex flex-col text-left">
-                            <span class="text-xs font-bold uppercase tracking-wider text-zinc-400">Completed</span>
-                            <span class="text-sm font-bold text-zinc-900 uppercase">Real World Projects</span>
-                        </div>
-                    </div>
-                    <p class="text-zinc-600 text-base leading-relaxed max-w-sm lg:max-w-none">
-                        Hands-on Experience building real-world Systems, AI/ML Applications, and Modern Web
-                        Solutions.
+                <!-- Left Column: Name, Description & Call to Actions -->
+                <div id="hero-left"
+                    class="flex flex-col text-left items-start order-1 lg:order-1 lg:col-span-5 max-w-xl w-full">
+                    <h1
+                        class="text-6xl sm:text-7xl md:text-8xl lg:text-[6rem] font-black uppercase tracking-tight text-zinc-950 leading-[0.8] select-none">
+                        Akarsh<br>Vijjapu
+                    </h1>
+                    <span class="text-xs font-bold uppercase tracking-[0.2em] text-zinc-400 block mt-3">Computer Science
+                        Engineer</span>
+                    <div class="w-12 h-[1px] bg-zinc-300 my-6"></div>
+                    <p class="text-zinc-600 text-sm md:text-base leading-relaxed">
+                        Backend-focused Computer Science Engineer passionate about designing scalable systems and
+                        building impactful digital solutions.
                     </p>
+                    <div class="flex items-center gap-4 mt-8">
+                        <a href="#projects"
+                            class="px-6 py-3 rounded-xl bg-zinc-950 text-white text-sm font-semibold transition hover:bg-zinc-800 flex items-center gap-2 group work-btn">
+                            View My Work
+                            <i data-lucide="arrow-up-right"
+                                class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                        </a>
+                        <a href="assets/Akarsh_Vijjapu_Resume.pdf" target="_blank" download="Akarsh Vijjapu Resume.pdf"
+                            class="px-6 py-3 rounded-xl border border-zinc-200 bg-white text-zinc-900 text-sm font-semibold transition hover:bg-zinc-50 shadow-sm flex items-center gap-2 group resume-btn">
+                            Resume
+                            <i data-lucide="download"
+                                class="w-4 h-4 group-hover:translate-y-0.5 transition-transform"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Center Column: Portrait Image -->
-                <div id="hero-center" class="flex justify-center order-1 lg:order-2">
+                <div id="hero-center" class="flex justify-center order-2 lg:order-2 lg:col-span-4">
                     <div class="hero-photo-wrapper w-full max-w-[280px] sm:max-w-[320px]">
                         <div
                             class="hero-photo-container relative w-full aspect-[3/4] rounded-[32px] overflow-hidden border border-black/5 shadow-2xl group hover:scale-[1.02] hover:-rotate-[15deg] transition-transform duration-500 origin-center">
                             <img src="assets/ME.jpeg" alt="Akarsh" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent">
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Column: Intro -->
-                <div id="hero-right" class="flex flex-col gap-6 text-center lg:text-left items-center lg:items-start order-2 lg:order-3">
-                    <p class="text-zinc-600 text-base leading-relaxed max-w-sm lg:max-w-none">
+                <!-- Right Column: Intro & Typewriter -->
+                <div id="hero-right"
+                    class="flex flex-col text-left items-start order-3 lg:order-3 lg:col-span-3 max-w-xs w-full pt-2">
+                    <p class="text-zinc-600 text-sm md:text-base leading-relaxed">
                         Hi, I'm Akarsh, a Backend-Focused Computer Science Engineer passionate about designing scalable
                         systems and building impactful digital solutions.
                     </p>
-                    <p class="text-zinc-600 text-base leading-relaxed">
-                        Computer Science Engineer &amp; <span id="typewriter"
-                            class="font-semibold text-black typewriter"></span>
+                    <p class="text-zinc-800 text-sm md:text-base leading-relaxed mt-6">
+                        Computer Science Engineer &amp; <br class="hidden sm:inline">
+                        <span id="typewriter" class="font-bold text-black typewriter"></span>
                     </p>
-                    <a href="assets/Akarsh_Vijjapu_Resume.pdf" target="_blank" download="Akarsh Vijjapu Resume.pdf"
-                        class="px-8 py-4 rounded-full bg-zinc-950 text-white font-semibold transition flex items-center gap-2 group resume-btn">
-                        Resume
-                        <i data-lucide="download" class="w-4 h-4 group-hover:translate-y-0.5 transition-transform"></i>
-                    </a>
                 </div>
 
             </div>
@@ -140,7 +152,8 @@
                     </p>
 
                     <!-- Metrics Row (Flat, Un-boxed) -->
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-8 border-t border-zinc-800 text-center sm:text-left">
+                    <div
+                        class="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-8 border-t border-zinc-800 text-center sm:text-left">
                         <div class="flex flex-col items-center sm:items-start gap-2">
                             <span class="text-5xl md:text-6xl font-black text-white stat-value" data-target="3"
                                 data-suffix="+">3+</span>
@@ -153,8 +166,8 @@
                                 Experience</span>
                         </div>
                         <div class="flex flex-col items-center sm:items-start gap-2">
-                            <span class="text-5xl md:text-6xl font-black text-white stat-value" data-target="84"
-                                data-suffix="%+">84%+</span>
+                            <span class="text-5xl md:text-6xl font-black text-white stat-value" data-target="8"
+                                data-suffix="+">8+</span>
                             <span class="text-xs font-bold uppercase tracking-widest text-zinc-500">CGPA</span>
                         </div>
                     </div>
@@ -415,7 +428,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
-        (function () { emailjs.init("5UisKGC1yQommHPcj"); })();
+            (function () { emailjs.init("5UisKGC1yQommHPcj"); })();
     </script>
     <script src="script.js"></script>
 </body>

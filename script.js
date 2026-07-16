@@ -156,7 +156,7 @@ function initCursor() {
 
   // Enlarge cursor ring ONLY on explicitly defined small interactive elements
   function attachCursorHover() {
-    const interactiveSelector = "#logo, .btn-hover-line, nav a, .resume-btn, .github-btn, #back-to-top, #submit-btn, .social-link, footer a";
+    const interactiveSelector = "#logo, .btn-hover-line, nav a, .resume-btn, .github-btn, .work-btn, #back-to-top, #submit-btn, .social-link, footer a";
 
     document.querySelectorAll(interactiveSelector).forEach(el => {
       // Avoid attaching multiple times

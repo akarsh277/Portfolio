@@ -24,6 +24,9 @@ body {
     background-color: var(--bg-light);
     color: #27272a;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 html {
@@ -61,10 +64,10 @@ html {
     z-index: 9999;
     transform: translate(-50%, -50%);
     transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-                height 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-                border-color 0.3s ease,
-                background 0.3s ease,
-                opacity 0.3s ease;
+        height 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+        border-color 0.3s ease,
+        background 0.3s ease,
+        opacity 0.3s ease;
     mix-blend-mode: difference;
 }
 
@@ -76,7 +79,8 @@ html {
     border-width: 2.5px;
 }
 
-@media (max-width: 1024px), (pointer: coarse) {
+@media (max-width: 1024px),
+(pointer: coarse) {
     #cursor-ring {
         display: none !important;
     }
@@ -101,7 +105,7 @@ html {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 #back-to-top.visible {
@@ -110,7 +114,7 @@ html {
 }
 
 #back-to-top:hover {
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     transform: translateY(-4px);
     background: #18181b;
 }
@@ -153,6 +157,8 @@ html {
     transition:
         opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
         transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .reveal.active {
@@ -384,9 +390,11 @@ nav a:hover {
     .project-card {
         grid-template-columns: 1fr;
     }
+
     .project-card-image {
         min-height: 200px;
     }
+
     .project-card-body {
         padding: 16px 0 0 0;
     }
@@ -578,7 +586,7 @@ body.loading {
     width: 24px;
     height: 24px;
     background: #ffffff;
-    box-shadow: 
+    box-shadow:
         0 0 15px rgba(255, 255, 255, 0.8),
         0 0 30px rgba(255, 255, 255, 0.4);
     border-radius: 50%;
@@ -599,7 +607,7 @@ body.loading {
     height: 2px;
     border-radius: 2px;
     background: #ffffff;
-    box-shadow: 
+    box-shadow:
         0 0 15px rgba(255, 255, 255, 0.8),
         0 0 30px rgba(255, 255, 255, 0.4);
     transform: translate(-50%, -50%);
@@ -614,11 +622,13 @@ body.loading {
 }
 
 #welcome-text {
-    transition: 
+    transition:
         opacity 1s cubic-bezier(0.25, 1, 0.5, 1),
         transform 1s cubic-bezier(0.25, 1, 0.5, 1),
         letter-spacing 1.2s cubic-bezier(0.25, 1, 0.5, 1);
     will-change: opacity, transform, letter-spacing;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 #welcome-text.reveal-active {
@@ -635,60 +645,70 @@ body.loading {
         transform: translate(-50%, -50%) scale(0.8);
         animation-timing-function: linear;
     }
+
     7% {
         left: 2%;
         top: 35%;
         transform: translate(-50%, -50%) scale(0.84);
         animation-timing-function: linear;
     }
+
     14% {
         left: 14%;
         top: 30%;
         transform: translate(-50%, -50%) scale(0.88);
         animation-timing-function: linear;
     }
+
     21% {
         left: 26%;
         top: 35%;
         transform: translate(-50%, -50%) scale(0.92);
         animation-timing-function: linear;
     }
+
     28% {
         left: 38%;
         top: 52%;
         transform: translate(-50%, -50%) scale(0.96);
         animation-timing-function: linear;
     }
+
     35% {
         left: 50%;
         top: 85%;
         transform: translate(-50%, -50%) scale(1);
         animation-timing-function: ease-out;
     }
+
     /* Squash on bottom hit */
     40% {
         left: 50%;
         top: 85%;
         transform: translate(-50%, -50%) scale(1.5, 0.5);
     }
+
     /* Bounce up stretching */
     45% {
         left: 50%;
         top: 80%;
         transform: translate(-50%, -50%) scale(0.6, 1.4);
     }
+
     /* Rise up to middle decel */
     75% {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%) scale(1);
     }
+
     /* Wobble/settle */
     88% {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%) scale(1.1);
     }
+
     100% {
         left: 50%;
         top: 50%;
@@ -714,9 +734,12 @@ body.loading {
 }
 
 @keyframes hero-photo-float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-12px);
     }

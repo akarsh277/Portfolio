@@ -8,8 +8,19 @@
     <title>Akarsh Vijjapu</title>
     <link rel="icon" href="assets/fevicon logo.jpg" type="image/jpeg">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,14 +28,17 @@
 <body class="mesh-gradient loading">
 
     <!-- =================== ABOUT ANIMATION (SPLASH SCREEN) =================== -->
-    <div id="about-splash" class="fixed inset-0 z-[9999] bg-black flex flex-col items-center justify-center select-none pointer-events-auto overflow-hidden" style="background-color: #000000; transition: transform 0.8s cubic-bezier(0.85, 0, 0.15, 1), opacity 0.8s ease;">
-        <div id="loading-container" class="relative inline-block text-white font-mono text-2xl md:text-4xl tracking-[0.3em]">
+    <div id="about-splash"
+        class="fixed inset-0 z-[9999] bg-black flex flex-col items-center justify-center select-none pointer-events-auto overflow-hidden"
+        style="background-color: #000000; transition: transform 0.8s cubic-bezier(0.85, 0, 0.15, 1), opacity 0.8s ease;">
+        <div id="loading-container"
+            class="relative inline-block text-white font-mono text-2xl md:text-4xl tracking-[0.3em]">
             <div id="loading-text" class="whitespace-nowrap pl-3 pr-2 py-1" style="clip-path: inset(0 100% 0 0);">
                 LOADING...
             </div>
             <div id="loading-cursor" class="absolute top-1 bottom-1 left-0 w-[3px] bg-white"></div>
         </div>
-    </div>    <!-- =================== CURSOR =================== -->
+    </div> <!-- =================== CURSOR =================== -->
     <div id="cursor-ring"></div>
 
     <!-- =================== FLOATING HEADER =================== -->
