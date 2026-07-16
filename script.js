@@ -84,7 +84,7 @@ const CERTIFICATIONS = [
     description:
       "Elite certification with a consolidated score of 82%. Completed a 12-week proctored programme covering OOP, collections, exception handling, and core Java fundamentals.",
     year: "2025",
-    logo: `<img src="assets/certificates/nptel.jpg" class="w-10 h-10 object-contain rounded-full" alt="NPTEL Logo">`,
+    logo: `<img src="assets/certificates/logos/nptel.jpg" class="w-10 h-10 object-contain rounded-full" alt="NPTEL Logo">`,
     certImage: "assets/certificates/nptel java.jpeg"
   },
   {
@@ -93,7 +93,7 @@ const CERTIFICATIONS = [
     description:
       "Participated in a 2-day workshop and 24-hour hackathon on Web Application Development using Design Thinking and Innovation, collaborating on real-world problem solving and rapid project development.",
     year: "2025",
-    logo: `<img src="assets/certificates/brainovision.jpg" class="w-full h-full object-cover rounded-full" alt="Brainovision Logo">`,
+    logo: `<img src="assets/certificates/logos/brainovision.jpg" class="w-full h-full object-cover rounded-full" alt="Brainovision Logo">`,
     certImage: "assets/certificates/Brain o vision workshop.jpg"
   },
   {
@@ -102,7 +102,7 @@ const CERTIFICATIONS = [
     description:
       "Successfully completed a fundamentals course on Python programming, covering core syntax, control structures, and basic scripting applications.",
     year: "2025",
-    logo: `<img src="assets/certificates/scaler.png" class="w-full h-full object-contain rounded-full" alt="Scaler Logo">`,
+    logo: `<img src="assets/certificates/logos/scaler.png" class="w-full h-full object-contain rounded-full" alt="Scaler Logo">`,
     certImage: "assets/certificates/Python scalar.jpg"
   },
   {
@@ -111,7 +111,7 @@ const CERTIFICATIONS = [
     description:
       "Completed an AI Tools and ChatGPT workshop focused on practical AI-assisted workflows, productivity enhancement, data analysis, and debugging techniques.",
     year: "2026",
-    logo: `<img src="assets/certificates/be10x.png" class="w-full h-full object-fill rounded-full" alt="Brainovision Logo">`,
+    logo: `<img src="assets/certificates/logos/be10x.png" class="w-full h-full object-fill rounded-full" alt="Be10x Logo">`,
     certImage: "assets/certificates/Be10x.jpg"
   },
   {
@@ -120,9 +120,18 @@ const CERTIFICATIONS = [
     description:
       "Completed IBM's SQL and Relational Databases 101 course, covering SQL fundamentals, relational database design, joins, filtering, aggregation, normalization, and database querying.",
     year: "2026",
-    logo: `<img src="assets/certificates/ibm.jpg" class="w-full h-full object-contain rounded-full bg-white" alt="IBM Logo">`,
+    logo: `<img src="assets/certificates/logos/ibm.jpg" class="w-full h-full object-contain rounded-full bg-white" alt="IBM Logo">`,
     certImage: "assets/certificates/IBM sql.jpeg"
   },
+  {
+    title: "Junior Backend Developer Internship",
+    provider: "YuvaIntern",
+    description: "Successfully completed the Junior Backend Developer internship, demonstrating dedication, professionalism, and a strong willingness to learn and contribute.",
+    year: "2026",
+    logo: `<img src="assets/certificates/logos/yuva.jpg" class="w-full h-full object-contain rounded-full bg-white" alt="YuvaIntern Logo">`,
+    certImage: "assets/certificates/yuva internship.jpeg"
+  }
+
 ];
 
 // ---- HELPERS -------------------------------------------------------------
@@ -156,7 +165,7 @@ function initCursor() {
 
   // Enlarge cursor ring ONLY on explicitly defined small interactive elements
   function attachCursorHover() {
-    const interactiveSelector = "#logo, .btn-hover-line, nav a, .resume-btn, .github-btn, .work-btn, #back-to-top, #submit-btn, .social-link, footer a";
+    const interactiveSelector = "#logo, .btn-hover-line, nav a, .resume-btn, .github-btn, .work-btn, #back-to-top, #submit-btn, .social-link, footer a, .certification-card";
 
     document.querySelectorAll(interactiveSelector).forEach(el => {
       // Avoid attaching multiple times
@@ -175,6 +184,24 @@ function initCursor() {
   // Uses MutationObserver to catch elements added by JS
   const observer = new MutationObserver(() => attachCursorHover());
   observer.observe(document.body, { childList: true, subtree: true });
+}
+
+// ---- HERO TITLE HOVER EFFECT ---------------------------------------------
+
+function initHeroTitle() {
+  const title = document.getElementById("hero-title");
+  if (!title) return;
+
+  const text = title.textContent.trim();
+  title.innerHTML = text
+    .split("")
+    .map(char => {
+      if (char === " ") {
+        return `<span class="inline-block">&nbsp;</span>`;
+      }
+      return `<span class="hover-letter inline-block">${char}</span>`;
+    })
+    .join("");
 }
 
 // ---- SCROLL PROGRESS BAR -------------------------------------------------
@@ -209,8 +236,29 @@ function initBackToTop() {
     btn.classList.toggle("visible", window.scrollY > 500);
   }, { passive: true });
 
-  btn.addEventListener("click", () => {
-    window.scrollTo(0, 0);
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const duration = 800; // Fixed duration for consistent speed across all pages
+    const startY = window.scrollY;
+    if (startY === 0) return;
+
+    let startTime = null;
+
+    function easeInOutQuart(t) {
+      return t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2;
+    }
+
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+
+      window.scrollTo(0, startY * (1 - easeInOutQuart(progress)));
+
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    }
+    window.requestAnimationFrame(step);
   });
 }
 
@@ -857,6 +905,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Features
   initCursor();
+  initHeroTitle();
   initScrollProgress();
   initBackToTop();
   initScrollSpy();

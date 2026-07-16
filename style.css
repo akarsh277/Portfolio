@@ -744,3 +744,14 @@ body.loading {
         transform: translateY(-12px);
     }
 }
+
+/* ---------- Hero Letter Hover ---------- */
+.hover-letter {
+    display: inline-block;
+    color: #09090b;
+    transition: color 0.1s ease, -webkit-text-stroke 0.1s ease;
+}
+.hover-letter:hover {
+    color: #ffffff !important;
+    -webkit-text-stroke: 2px #09090b;
+}
